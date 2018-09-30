@@ -1,10 +1,12 @@
 package pl.kodu.akademia.generateCV.model;
 
+
+
 public class Person {
 
     private String fitstName;
     private String lastName;
-    private String birthDay;
+    private String birthDate;
     private String address;
     private String email;
     private String phone;
@@ -30,10 +32,12 @@ public class Person {
     }
 
     public String getFitstName() {
+
         return fitstName;
     }
 
-    public void setFitstName(String fitstName) {
+    public void setFitstName(String fitstName)
+    {
         this.fitstName = fitstName;
     }
 
@@ -42,15 +46,18 @@ public class Person {
     }
 
     public void setLastName(String lastName) {
+
         this.lastName = lastName;
     }
 
-    public String getBirthDay() {
-        return birthDay;
+    public String getBirthDate() {
+
+        return birthDate;
     }
 
-    public void setBirthDay(String birthDay) {
-        this.birthDay = birthDay;
+    public void setbirthDate(String birthDay) {
+
+        this.birthDate = birthDay;
     }
 
     public String getAddress() {
@@ -58,6 +65,7 @@ public class Person {
     }
 
     public void setAddress(String address) {
+
         this.address = address;
     }
 
@@ -65,7 +73,8 @@ public class Person {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email)
+    {
         this.email = email;
     }
 
@@ -74,6 +83,7 @@ public class Person {
     }
 
     public void setPhone(String phone) {
+
         this.phone = phone;
     }
 }

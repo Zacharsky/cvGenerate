@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Roboto+Slab:700" rel="stylesheet">
+    <title>CV Kreator</title>
+</head>
+<body>
+<div class="container">
+    <div class="row main">
+        <div class="main-login main-center">
+            <h2>Podaj swoje dane aby stworzyć CV</h2>
+            <form th:action="@{/cvform}" method="post" action="#" data-toggle="validator" role="form">
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label class="control-label">Imię</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <input type="text" th:field="${person.fitstName}" class="form-control" id="first_name"
+                                   placeholder="Podaj imie" data-minlength="2" required/>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label class="control-label">Nazwisko</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-address-book" aria-hidden="true"></i></span>
+                            <input type="text" th:field="${person.lastName}" class="form-control" id="last_name"
+                                   placeholder="Podaj nazwisko" data-minlength="2" required/>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label class="control-label">Data urodzenia</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            <input type="date" th:field="${person.birthDate}" class="form-control" id="birth_date"
+                                   pattern="^[_0-9]{1,}$" required/>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <label class="control-label">Adres zamieszkania</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-globe" aria-hidden="true"></i></span>
+                            <input type="text" th:field="${person.address}" class="form-control" id="address"
+                                   placeholder="Ulica, kod pocztowy, miasto" data-minlength="15" required/>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-8">
+                        <label class="control-label">Adres email</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <input type="email" th:field="${person.email}" class="form-control" id="email"
+                                   placeholder="Podaj email" required/>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label class="control-label">Numer telefonu</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                            <input type="tel" th:field="${person.phone}" class="form-control" id="phone"
+                                   placeholder="123 456 789" pattern="^[0-9]{1,9}$" data-minlength="9" required/>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <label class="control-label">Strona www</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                            <input type="text" th:field="${person.page}" class="form-control" id="web_page"
+                                   placeholder="Podaj adres www" data-minlength="5" required/><span
+                                class="input-group-addon"><input class="form-control" type="button"
+                                                                 value="Dodaj"></span><span
+                                class="input-group-addon"><input class="form-control" type="button" value="Usuń"></span>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <input type="submit" class="form-control" value="Generuj" id="button"></input>
+                </div>
+            </form>
+            <footer>Made by Daniel</footer>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/validator.js"></script>
+</body>
+</html>
